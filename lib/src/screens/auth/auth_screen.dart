@@ -6,33 +6,61 @@ class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
+      backgroundColor: Color(0xFFF3F4F6),
       navigationBar: const CupertinoNavigationBar(
+        backgroundColor: CupertinoColors.white,
+        border: Border(),
         middle: Text('Авторизация'),
       ),
       child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: const [
-            CupertinoTextField(
+          children: [
+            const CupertinoTextField(
               placeholder: 'Логин или почта',
+              padding: EdgeInsets.symmetric(vertical: 19, horizontal: 16),
+              decoration: BoxDecoration(color: CupertinoColors.white),
             ),
-            CupertinoTextField(
+            Container(
+              height: 1,
+              color: Color(0xFFE0E6ED),
+              margin: const EdgeInsets.symmetric(horizontal: 16),
+            ),
+            const CupertinoTextField(
               placeholder: 'Пароль',
+              padding: EdgeInsets.symmetric(vertical: 19, horizontal: 16),
+              decoration: BoxDecoration(color: CupertinoColors.white),
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
-            CupertinoButton.filled(
-              child: Text('Войти'),
-              onPressed: null,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: CupertinoButton(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                color: Color(0xFF4631D2),
+                child: const Text(
+                  'Войти',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onPressed: () {},
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 19,
             ),
-            CupertinoButton.filled(
-              child: Text('Зарегистрироваться'),
-              onPressed: null,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: CupertinoButton(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                color: Color(0xFF4631D2),
+                child: const Text(
+                  'Зарегистрироваться',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onPressed: () {},
+              ),
             ),
           ],
         ),
