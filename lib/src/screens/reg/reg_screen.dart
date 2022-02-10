@@ -1,4 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:hello_flutter/src/common/constants/color_constants.dart';
+import 'package:hello_flutter/src/common/widgets/custom_button.dart';
+import 'package:hello_flutter/src/common/widgets/custom_text_field.dart';
 
 class RegScreen extends StatelessWidget {
   const RegScreen({Key? key}) : super(key: key);
@@ -6,9 +9,9 @@ class RegScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: const Color(0xFFF3F4F6),
+      backgroundColor: AppColors.scaffoldBackground,
       navigationBar: const CupertinoNavigationBar(
-        backgroundColor: CupertinoColors.white,
+        backgroundColor: AppColors.white,
         border: Border(),
         middle: Text('Регистарция'),
       ),
@@ -20,40 +23,25 @@ class RegScreen extends StatelessWidget {
             const SizedBox(
               height: 32,
             ),
-            const CupertinoTextField(
+            const CustomTextField(
               placeholder: 'Логин',
-              padding: EdgeInsets.symmetric(vertical: 19, horizontal: 16),
-              decoration: BoxDecoration(color: CupertinoColors.white),
             ),
             const SizedBox(height: 1),
-            const CupertinoTextField(
+            const CustomTextField(
               placeholder: 'Телефон',
-              padding: EdgeInsets.symmetric(vertical: 19, horizontal: 16),
-              decoration: BoxDecoration(color: CupertinoColors.white),
             ),
             const SizedBox(height: 1),
-            const CupertinoTextField(
+            const CustomTextField(
               placeholder: 'Почта',
-              padding: EdgeInsets.symmetric(vertical: 19, horizontal: 16),
-              decoration: BoxDecoration(color: CupertinoColors.white),
             ),
             const SizedBox(height: 1),
-            const CupertinoTextField(
+            const CustomTextField(
               placeholder: 'Пароль',
-              padding: EdgeInsets.symmetric(vertical: 19, horizontal: 16),
-              decoration: BoxDecoration(color: CupertinoColors.white),
             ),
             const SizedBox(height: 327),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: CupertinoButton(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  color: const Color(0xFF4631D2),
-                  child: const Text(
-                    'Создать аккаунт',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  onPressed: () {}),
+              child: CustomButton(title: 'Создать аккаунт', onPressed: () {}),
             ),
           ],
         ),

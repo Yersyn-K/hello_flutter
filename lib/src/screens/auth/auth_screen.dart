@@ -1,4 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:hello_flutter/src/common/constants/color_constants.dart';
+import 'package:hello_flutter/src/common/widgets/custom_button.dart';
+import 'package:hello_flutter/src/common/widgets/custom_text_field.dart';
 import 'package:hello_flutter/src/router/routing_const.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -7,9 +10,9 @@ class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: const Color(0xFFF3F4F6),
+      backgroundColor: AppColors.scaffoldBackground,
       navigationBar: const CupertinoNavigationBar(
-        backgroundColor: CupertinoColors.white,
+        backgroundColor: AppColors.white,
         border: Border(),
         middle: Text('Авторизация'),
       ),
@@ -18,33 +21,24 @@ class AuthScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const CupertinoTextField(
-              placeholder: 'Логин или почта',
-              padding: EdgeInsets.symmetric(vertical: 19, horizontal: 16),
-              decoration: BoxDecoration(color: CupertinoColors.white),
+            const CustomTextField(
+              placeholder: 'Логин и Почта',
             ),
             Container(
               height: 1,
-              color: const Color(0xFFE0E6ED),
+              color: AppColors.scaffoldBackground,
               margin: const EdgeInsets.symmetric(horizontal: 16),
             ),
-            const CupertinoTextField(
+            const CustomTextField(
               placeholder: 'Пароль',
-              padding: EdgeInsets.symmetric(vertical: 19, horizontal: 16),
-              decoration: BoxDecoration(color: CupertinoColors.white),
             ),
             const SizedBox(
               height: 32,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: CupertinoButton(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                color: const Color(0xFF4631D2),
-                child: const Text(
-                  'Войти',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
+              child: CustomButton(
+                title: 'Войти',
                 onPressed: () {},
               ),
             ),
@@ -53,13 +47,8 @@ class AuthScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: CupertinoButton(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                color: const Color(0xFF4631D2),
-                child: const Text(
-                  'Зарегистрироваться',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
+              child: CustomButton(
+                title: 'Зарегистрироваться',
                 onPressed: () {
                   Navigator.pushNamed(context, RegisterRoute);
                 },
