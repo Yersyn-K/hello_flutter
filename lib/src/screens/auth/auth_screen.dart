@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:hello_flutter/src/router/routing_const.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -6,7 +7,7 @@ class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: Color(0xFFF3F4F6),
+      backgroundColor: const Color(0xFFF3F4F6),
       navigationBar: const CupertinoNavigationBar(
         backgroundColor: CupertinoColors.white,
         border: Border(),
@@ -24,7 +25,7 @@ class AuthScreen extends StatelessWidget {
             ),
             Container(
               height: 1,
-              color: Color(0xFFE0E6ED),
+              color: const Color(0xFFE0E6ED),
               margin: const EdgeInsets.symmetric(horizontal: 16),
             ),
             const CupertinoTextField(
@@ -39,7 +40,7 @@ class AuthScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: CupertinoButton(
                 padding: const EdgeInsets.symmetric(vertical: 20),
-                color: Color(0xFF4631D2),
+                color: const Color(0xFF4631D2),
                 child: const Text(
                   'Войти',
                   style: TextStyle(fontWeight: FontWeight.bold),
@@ -54,12 +55,14 @@ class AuthScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: CupertinoButton(
                 padding: const EdgeInsets.symmetric(vertical: 20),
-                color: Color(0xFF4631D2),
+                color: const Color(0xFF4631D2),
                 child: const Text(
                   'Зарегистрироваться',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, RegisterRoute);
+                },
               ),
             ),
           ],
