@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 class RegScreen extends StatelessWidget {
   const RegScreen({Key? key}) : super(key: key);
 
-  get child => null;
-
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
