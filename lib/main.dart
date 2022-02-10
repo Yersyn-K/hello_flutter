@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:hello_flutter/src/common/constants/color_constants.dart';
 import 'package:hello_flutter/src/router/router.dart';
 import 'package:hello_flutter/src/router/routing_const.dart';
 
@@ -15,6 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter.generateRoute,
       initialRoute: AuthRoute,
+      theme: CupertinoThemeData(
+          scaffoldBackgroundColor: AppColors.scaffoldBackground),
     );
   }
 }
