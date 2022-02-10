@@ -1,45 +1,20 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:hello_flutter/src/router/router.dart';
+import 'package:hello_flutter/src/router/routing_const.dart';
 
-void main() => runApp(_MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
-class _MyApp extends StatelessWidget {
-  get backgroundColor => null;
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var heart;
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: (Colors.grey.shade900),
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: const Text('Who do you love?'),
-          centerTitle: true,
-        ),
-        body: Align(
-          alignment: Alignment.center,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
-              Text(
-                'I',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.pink, fontSize: 70),
-              ),
-              Icon(
-                Icons.favorite,
-                color: Colors.pink,
-                size: 100.0,
-              ),
-              Text(
-                'Mahabbat',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.pink, fontSize: 50),
-              ),
-            ],
-          ),
-        ),
-      ),
+    return const CupertinoApp(
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: AppRouter.generateRoute,
+      initialRoute: AuthRoute,
     );
   }
 }
