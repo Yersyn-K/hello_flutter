@@ -39,7 +39,9 @@ class AuthScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: CustomButton(
                 title: 'Войти',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, HomeRoute);
+                },
               ),
             ),
             const SizedBox(

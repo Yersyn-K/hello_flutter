@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const CupertinoApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter.generateRoute,
-      initialRoute: AuthRoute,
+      initialRoute: HomeRoute,
       theme: CupertinoThemeData(
           scaffoldBackgroundColor: AppColors.scaffoldBackground),
     );

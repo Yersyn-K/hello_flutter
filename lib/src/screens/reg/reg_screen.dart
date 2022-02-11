@@ -38,11 +38,12 @@ class RegScreen extends StatelessWidget {
             const CustomTextField(
               placeholder: 'Пароль',
             ),
-            const SizedBox(height: 327),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: CustomButton(title: 'Создать аккаунт', onPressed: () {}),
             ),
+            const SizedBox(height: 16),
           ],
         ),
       ),
