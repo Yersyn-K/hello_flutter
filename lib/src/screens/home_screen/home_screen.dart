@@ -1,32 +1,42 @@
 import 'package:flutter/cupertino.dart';
+import 'package:hello_flutter/src/common/constants/color_constants.dart';
 import 'package:hello_flutter/src/common/widgets/custom_listview.dart';
-import 'package:hello_flutter/src/common/widgets/custom_text_field.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.height);
     return CupertinoPageScaffold(
+      backgroundColor: AppColors.scaffoldBackground,
       child: SafeArea(
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.start,
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-              child: CupertinoTextField(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.start,
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SizedBox(height: 16),
+              CupertinoTextField(
+                prefix: const Padding(
+                  padding: EdgeInsets.only(left: 16),
+                  child: Icon(CupertinoIcons.search),
+                ),
                 placeholder: 'Search',
                 padding:
                     const EdgeInsets.symmetric(vertical: 19, horizontal: 16),
-                decoration: const BoxDecoration(color: CupertinoColors.white),
+                decoration: BoxDecoration(
+                    color: CupertinoColors.white,
+                    borderRadius: BorderRadius.circular(6)),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(),
-              child: CustomListView(),
-            ),
-          ],
+              const SizedBox(height: 16),
+              Expanded(
+                child: CustomListView(),
+              ),
+              const SizedBox(height: 16),
+            ],
+          ),
         ),
       ),
     );

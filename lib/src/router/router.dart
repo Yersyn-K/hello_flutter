@@ -3,6 +3,7 @@ import 'package:hello_flutter/src/router/routing_const.dart';
 import 'package:hello_flutter/src/screens/auth/auth_screen.dart';
 import 'package:hello_flutter/src/screens/home_screen/home_screen.dart';
 import 'package:hello_flutter/src/screens/main_screen/main_screen.dart';
+import 'package:hello_flutter/src/screens/profile_screen/profile_screen.dart';
 import 'package:hello_flutter/src/screens/reg/reg_screen.dart';
 
 class AppRouter {
@@ -10,7 +11,7 @@ class AppRouter {
     switch (routeSettings.name) {
       case AuthRoute:
         return CupertinoPageRoute(
-          builder: (context) => const AuthScreen(),
+          builder: (context) => const ProfileScreen(),
         );
       case RegisterRoute:
         return CupertinoPageRoute(
